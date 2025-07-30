@@ -40,7 +40,7 @@ export function DashboardLayout({ children, title }: DashboardLayoutProps) {
                   <Church className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h1 className="text-xl font-bold text-foreground">Ministry Groups</h1>
+                  <h1 className="text-xl font-bold text-foreground">Manor Sanga Portal</h1>
                   <p className="text-sm text-muted-foreground">{title}</p>
                 </div>
               </div>

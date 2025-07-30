@@ -159,8 +159,12 @@ export function MemberDashboard() {
             </div>
           </CardContent>
         </Card>
-
-        {/* Group Members (Limited View) */}
+              
+        <Card className="bg-gradient-card">
+          <CardHeader>
+            <CardTitle className="text-xl"><a href="#">Link Sadhana Chart</a></CardTitle>
+          </CardHeader>
+        </Card>
         <Card className="bg-gradient-card">
           <CardHeader>
             <CardTitle className="text-xl">Fellow Group Members</CardTitle>

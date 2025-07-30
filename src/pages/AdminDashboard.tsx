@@ -49,9 +49,9 @@ export function AdminDashboard() {
       bgColor: 'bg-green-50'
     },
     {
-      title: 'Weekly Meetings',
-      value: weeklyGroups,
-      subtitle: `${mockGroups.length - weeklyGroups} monthly`,
+      title: 'Growth This Month',
+      value: 2,
+      subtitle: `2 new Sangas`,
       icon: TrendingUp,
       color: 'text-purple-600',
       bgColor: 'bg-purple-50'
@@ -73,7 +73,7 @@ export function AdminDashboard() {
         <div className="bg-gradient-hero text-white rounded-xl p-6">
           <h2 className="text-2xl font-bold mb-2">Welcome back, Admin!</h2>
           <p className="text-white/90">
-            Manage all ministry groups, track member engagement, and oversee group activities.
+            Manage all Manor Sangas, track member engagement, and oversee group activities.
           </p>
         </div>
 
@@ -103,7 +103,7 @@ export function AdminDashboard() {
         <Card className="bg-gradient-card">
           <CardHeader>
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-              <CardTitle className="text-xl">All Ministry Groups</CardTitle>
+              <CardTitle className="text-xl">All Manor Sanga Groups</CardTitle>
               <Button className="bg-gradient-primary hover:shadow-glow transition-all duration-300 gap-2">
                 <Plus className="w-4 h-4" />
                 Add New Group

@@ -45,7 +45,7 @@ export function LoginForm() {
 
   const demoAccounts = [
     { role: 'Admin', email: 'admin@church.com', desc: 'View all groups and manage system' },
-    { role: 'Leader', email: 'leader@church.com', desc: 'Manage Young Adults Fellowship group' },
+    { role: 'Leader', email: 'leader@church.com', desc: 'Manage Stevenage Sanga' },
     { role: 'Member', email: 'member@church.com', desc: 'View personal details only' }
   ];
 
@@ -58,10 +58,10 @@ export function LoginForm() {
             <div className="p-3 bg-white/20 rounded-xl backdrop-blur-sm">
               <Church className="w-8 h-8" />
             </div>
-            <h1 className="text-3xl font-bold">Ministry Groups</h1>
+            <h1 className="text-3xl font-bold">Manor Sanga Portal</h1>
           </div>
           <p className="text-xl text-white/90 mb-8">
-            Manage your church groups, members, and activities with ease. Connect, grow, and serve together.
+            Manage your groups, members, and activities with ease. Connect, grow, and serve together.
           </p>
           <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
             <div className="flex items-center gap-2 text-white/80">
@@ -121,9 +121,7 @@ export function LoginForm() {
             </form>
 
             <div className="space-y-3">
-              <div className="text-center">
-                <p className="text-sm text-muted-foreground mb-3">Demo Accounts (password: "password")</p>
-              </div>
+            
               {demoAccounts.map((account) => (
                 <Card 
                   key={account.email}
