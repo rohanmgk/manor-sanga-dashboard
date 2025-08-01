@@ -49,15 +49,16 @@ export function GroupCard({ group, onClick, showMembers = true }: GroupCardProps
             <CardTitle className="text-lg group-hover:text-primary transition-colors">
               {group.name}
             </CardTitle>
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <BookOpen className="w-4 h-4" />
-              <span><b>{group.preacherName}</b></span>
-            </div>
           </div>
-          <Badge className={`${getTypeColor(group.type)} gap-1`}>
-            {getTypeIcon(group.type)}
-            {group.type}
-          </Badge>
+          <div className="flex gap-2">
+            <Badge className={`${getTypeColor(group.type)} gap-1`}>
+              {getTypeIcon(group.type)}
+              {group.type}
+            </Badge>
+            <Badge className="bg-green-100 text-green-800 border-green-200">
+              Active
+            </Badge>
+          </div>
         </div>
       </CardHeader>
       
@@ -68,22 +69,25 @@ export function GroupCard({ group, onClick, showMembers = true }: GroupCardProps
             <span className="truncate">{group.location}</span>
           </div>
           <div className="flex items-center gap-2 text-muted-foreground">
-            <Clock className="w-4 h-4" />
-            <span>{group.time}</span>
-          </div>
-          <div className="flex items-center gap-2 text-muted-foreground">
             <Calendar className="w-4 h-4" />
             <span className="capitalize">{group.day} ({group.frequency})</span>
           </div>
           <div className="flex items-center gap-2 text-muted-foreground">
             <Users className="w-4 h-4" />
             <span>{activeMembers.length} active members</span>
-          </div>         
-        </div>
-
-        <div className="space-y-2">
-          <p className="text-sm font-medium">Current Curriculum</p>
-          <p className="text-sm text-muted-foreground line-clamp-2">{group.curriculum}</p>
+          </div> 
+          <div className="flex items-center gap-2 text-muted-foreground">
+            <Clock className="w-4 h-4" />
+            <span>{group.time}</span>
+          </div>           
+          <div className="flex items-center gap-2 text-muted-foreground">
+              <BookOpen className="w-4 h-4" />
+              <span><b>{group.curriculum}</b></span>
+            </div>          
+          <div className="flex items-center gap-2 text-muted-foreground">
+            <Clock className="w-4 h-4" />
+            <span><b>Next Session: Wed, 02 Sep 2025</b></span>
+          </div>                         
         </div>
 
         {showMembers && group.members.length > 0 && (

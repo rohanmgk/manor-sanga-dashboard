@@ -56,9 +56,9 @@ export function LeaderDashboard() {
       bgColor: 'bg-blue-50'
     },
     {
-      title: 'Active Members',
-      value: activeMembers.length,
-      subtitle: `${Math.round((activeMembers.length / userGroup.members.length) * 100)}% active`,
+      title: 'Sanga Attendance',
+      value: '70%',
+      subtitle: ``,
       icon: TrendingUp,
       color: 'text-green-600',
       bgColor: 'bg-green-50'
@@ -73,7 +73,7 @@ export function LeaderDashboard() {
     },
     {
       title: 'Current Study',
-      value: 'Active',
+      value: 'Gita 3',
       subtitle: 'curriculum in progress',
       icon: BookOpen,
       color: 'text-orange-600',
@@ -121,11 +121,87 @@ export function LeaderDashboard() {
           </CardHeader>
           <CardContent>
             <GroupCard group={userGroup} showMembers={false} />
-            
-            <div className="mt-6 p-4 bg-muted rounded-lg">
-              <h3 className="font-medium mb-2">Current Curriculum</h3>
-              <p className="text-sm text-muted-foreground">{userGroup.curriculum}</p>
-            </div>
+          </CardContent>
+        </Card>
+
+        {/* Members Section */}
+        {/* Sanga Attendance Card */}
+        <Card className="bg-gradient-card">
+          <CardHeader>
+            <CardTitle className="text-xl">Sanga Attendance (Last 4 Sessions)</CardTitle>
+            <p className="text-muted-foreground mt-1 text-sm">
+              Track attendance for your group members over the last four Sessions.
+            </p>
+          </CardHeader>
+          <CardContent>
+            {/* Mock Data for Attendance */}
+            {(() => {
+              // Mock: last 4 sanga dates (most recent first)
+              const lastFourDates = [
+                "2024-06-05",
+                "2024-05-29",
+                "2024-05-22",
+                "2024-05-15"
+              ];
+              // Mock: attendance per member (id: {date: present/absent})
+              // We'll use userGroup.members and randomly assign attendance
+              const attendanceMap: Record<string, Record<string, boolean>> = {};
+              userGroup.members.forEach((member, idx) => {
+                attendanceMap[member.id] = {};
+                lastFourDates.forEach((date, dIdx) => {
+                  // For mock: alternate present/absent for variety
+                  attendanceMap[member.id][date] = ((idx + dIdx) % 3 !== 0);
+                });
+              });
+
+              return (
+                <div className="overflow-x-auto">
+                  <table className="min-w-full text-sm border-separate border-spacing-y-2">
+                    <thead>
+                      <tr>
+                        <th className="text-left px-2 py-1 font-medium text-muted-foreground">Member</th>
+                        {lastFourDates.map(date => (
+                          <th key={date} className="px-2 py-1 font-medium text-muted-foreground whitespace-nowrap">
+                            {new Date(date).toLocaleDateString(undefined, { month: 'short', day: 'numeric' })} 2025
+                          </th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {userGroup.members.map(member => (
+                        <tr key={member.id} className="bg-card rounded">
+                          <td className="px-2 py-1 flex items-center gap-2">
+                            <img
+                              src={member.avatar}
+                              alt={member.name}
+                              className="w-6 h-6 rounded-full border border-muted"
+                            />
+                            <span className="truncate max-w-[120px]">{member.name}</span>
+                          </td>
+                          {lastFourDates.map(date => (
+                            <td key={date} className="px-2 py-1 text-center">
+                              {attendanceMap[member.id][date] ? (
+                                <span className="inline-block w-5 h-5 rounded-full bg-green-200 text-green-700">
+                                  <svg className="w-4 h-4 mx-auto my-0.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 16 16">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M4 8l3 3 5-5" />
+                                  </svg>
+                                </span>
+                              ) : (
+                                <span className="inline-block w-5 h-5 rounded-full bg-red-100 text-red-600">
+                                  <svg className="w-4 h-4 mx-auto my-0.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 16 16">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 5l6 6M11 5l-6 6" />
+                                  </svg>
+                                </span>
+                              )}
+                            </td>
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              );
+            })()}
           </CardContent>
         </Card>
 
