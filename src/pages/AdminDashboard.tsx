@@ -34,31 +34,32 @@ export function AdminDashboard() {
 
   const stats = [
     {
-      title: 'Total Groups',
-      value: mockGroups.length,
+      title: 'Active Sangas',
+      value: 45,
+      subtitle: `of 50 total`,
       icon: Calendar,
       color: 'text-blue-600',
       bgColor: 'bg-blue-50'
     },
     {
       title: 'Active Members',
-      value: activeMembers,
-      subtitle: `of ${totalMembers} total`,
+      value: 650,
+      subtitle: `of 700 total`,
       icon: Users,
       color: 'text-green-600',
       bgColor: 'bg-green-50'
     },
     {
       title: 'Growth This Month',
-      value: 2,
-      subtitle: `2 new Sangas`,
+      value: '2 / 30',
+      subtitle: `2 new Sangas / 30 new members`,
       icon: TrendingUp,
       color: 'text-purple-600',
       bgColor: 'bg-purple-50'
     },
     {
       title: 'Avg Group Size',
-      value: Math.round(totalMembers / mockGroups.length),
+      value: 15,
       subtitle: 'members per group',
       icon: BarChart3,
       color: 'text-orange-600',

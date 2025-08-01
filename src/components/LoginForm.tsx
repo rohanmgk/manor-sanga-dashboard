@@ -23,7 +23,7 @@ export function LoginForm() {
       if (success) {
         toast({
           title: "Login successful",
-          description: "Welcome to the Group Management System",
+          description: "Welcome to the Manor Sanga Portal",
         });
       } else {
         toast({

@@ -51,7 +51,7 @@ export function GroupCard({ group, onClick, showMembers = true }: GroupCardProps
             </CardTitle>
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
               <BookOpen className="w-4 h-4" />
-              <span>{group.preacherName}</span>
+              <span><b>{group.preacherName}</b></span>
             </div>
           </div>
           <Badge className={`${getTypeColor(group.type)} gap-1`}>
@@ -78,11 +78,11 @@ export function GroupCard({ group, onClick, showMembers = true }: GroupCardProps
           <div className="flex items-center gap-2 text-muted-foreground">
             <Users className="w-4 h-4" />
             <span>{activeMembers.length} active members</span>
-          </div>
+          </div>         
         </div>
 
         <div className="space-y-2">
-          <p className="text-sm font-medium">Current Curriculum:</p>
+          <p className="text-sm font-medium">Current Curriculum</p>
           <p className="text-sm text-muted-foreground line-clamp-2">{group.curriculum}</p>
         </div>
 

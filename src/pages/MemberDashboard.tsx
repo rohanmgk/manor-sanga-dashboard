@@ -41,7 +41,7 @@ export function MemberDashboard() {
   }
 
   const nextMeeting = {
-    date: 'Next Wednesday',
+    date: 'Wednesday, 22 Sep 2025',
     time: userGroup.time,
     location: userGroup.location
   };
@@ -160,10 +160,307 @@ export function MemberDashboard() {
           </CardContent>
         </Card>
               
+        {/* Sanga Attendance Card */}
+        <Card className="bg-gradient-card mb-6">
+          <CardHeader>
+            <CardTitle className="text-xl">
+                Sanga Attendance
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="flex flex-wrap gap-4 overflow-x-auto">
+              <table className="min-w-full text-sm border rounded-lg bg-background">
+                <thead>
+                  <tr className="bg-muted">
+                    <th className="px-3 py-2 font-semibold text-left">Date</th>
+                    <th className="px-3 py-2 font-semibold text-center">Topic</th>
+                    <th className="px-3 py-2 font-semibold text-center">Attended</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    {
+                      date: "2024-06-01",
+                      topic: "Bhagavad Gita Ch. 2",
+                      attended: true
+                    },
+                    {
+                      date: "2024-06-08",
+                      topic: "Bhagavad Gita Ch. 3",
+                      attended: false
+                    },
+                    {
+                      date: "2024-06-15",
+                      topic: "Bhagavad Gita Ch. 4",
+                      attended: true
+                    },
+                    {
+                      date: "2024-06-22",
+                      topic: "Special Guest Lecture",
+                      attended: true
+                    },
+                    {
+                      date: "2024-06-29",
+                      topic: "Q&A Session",
+                      attended: false
+                    }
+                  ].map((entry, idx) => (
+                    <tr key={entry.date} className={idx % 2 === 0 ? "bg-background" : "bg-muted/50"}>
+                      <td className="px-3 py-2">
+                        {new Date(entry.date).toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: '2-digit' })}
+                      </td>
+                      <td className="px-3 py-2 text-center">{entry.topic}</td>
+                      <td className="px-3 py-2 text-center">
+                        {entry.attended ? (
+                          <span className="inline-block w-5 h-5 rounded-full bg-green-100 text-green-700 text-xs flex items-center justify-center">✔</span>
+                        ) : (
+                          <span className="inline-block w-5 h-5 rounded-full bg-red-100 text-red-700 text-xs flex items-center justify-center">✗</span>
+                        )}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </CardContent>
+        </Card>
+
         <Card className="bg-gradient-card">
           <CardHeader>
-            <CardTitle className="text-xl"><a href="#">Link Sadhana Chart</a></CardTitle>
+            <CardTitle className="text-xl">
+            Sadhana Chart
+            </CardTitle>
           </CardHeader>
+          <CardContent>
+            <div className="flex flex-wrap gap-4 overflow-x-auto">
+              <table className="min-w-full text-sm border rounded-lg bg-background">
+                <thead>
+                  <tr className="bg-muted">
+                    <th className="px-3 py-2 font-semibold text-left">Date</th>
+                    <th className="px-3 py-2 font-semibold text-center">Rounds</th>
+                    <th className="px-3 py-2 font-semibold text-center">Books</th>
+                    <th className="px-3 py-2 font-semibold text-center">PP Lectures</th>
+                    <th className="px-3 py-2 font-semibold text-center">Guru Lectures</th>
+                    <th className="px-3 py-2 font-semibold text-center">Other Lectures</th>
+                    <th className="px-3 py-2 font-semibold text-center">Before 6:30am</th>
+                    <th className="px-3 py-2 font-semibold text-center">Aarti</th>
+                    <th className="px-3 py-2 font-semibold text-center">Rounds by 10am</th>
+                    <th className="px-3 py-2 font-semibold text-center">Service</th>
+                    <th className="px-3 py-2 font-semibold text-center">Preaching</th>
+                    <th className="px-3 py-2 font-semibold text-center">Mentee Mtg</th>
+                    <th className="px-3 py-2 font-semibold text-center">Festival/SP</th>
+                    <th className="px-3 py-2 font-semibold text-center">Note</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    {
+                      "userid": 10559,
+                      "sadhanadate": "2025-01-27T00:00:00.000Z",
+                      "dailyrounds": 16,
+                      "prabhupadabooks": 0,
+                      "prabhupadalectures": 0,
+                      "gurulectures": 0,
+                      "otherslectures": 0,
+                      "raisingbefore630": true,
+                      "aartiathome": false,
+                      "dailyroundsbefore10": 8,
+                      "servicetoiskcon": false,
+                      "preachingactivity": false,
+                      "menteemeeting": false,
+                      "festivalorsundayprogram": false,
+                      "morningprogramfrom430": false,
+                      "morningprogramfrom700": false,
+                      "recseqno": 1,
+                      "delayinentering": 0,
+                      "note": ""
+                    },
+                    {
+                      "userid": 10559,
+                      "sadhanadate": "2025-01-28T00:00:00.000Z",
+                      "dailyrounds": 16,
+                      "prabhupadabooks": 0,
+                      "prabhupadalectures": 0,
+                      "gurulectures": 0,
+                      "otherslectures": 0,
+                      "raisingbefore630": true,
+                      "aartiathome": false,
+                      "dailyroundsbefore10": 8,
+                      "servicetoiskcon": false,
+                      "preachingactivity": false,
+                      "menteemeeting": false,
+                      "festivalorsundayprogram": false,
+                      "morningprogramfrom430": false,
+                      "morningprogramfrom700": false,
+                      "recseqno": 1,
+                      "delayinentering": 0,
+                      "note": ""
+                    },
+                    {
+                      "userid": 10559,
+                      "sadhanadate": "2025-01-29T00:00:00.000Z",
+                      "dailyrounds": 16,
+                      "prabhupadabooks": 0,
+                      "prabhupadalectures": 30,
+                      "gurulectures": 0,
+                      "otherslectures": 0,
+                      "raisingbefore630": true,
+                      "aartiathome": false,
+                      "dailyroundsbefore10": 8,
+                      "servicetoiskcon": false,
+                      "preachingactivity": false,
+                      "menteemeeting": false,
+                      "festivalorsundayprogram": false,
+                      "morningprogramfrom430": false,
+                      "morningprogramfrom700": false,
+                      "recseqno": 1,
+                      "delayinentering": 0,
+                      "note": ""
+                    },
+                    {
+                      "userid": 10559,
+                      "sadhanadate": "2025-01-30T00:00:00.000Z",
+                      "dailyrounds": 16,
+                      "prabhupadabooks": 30,
+                      "prabhupadalectures": 0,
+                      "gurulectures": 0,
+                      "otherslectures": 0,
+                      "raisingbefore630": true,
+                      "aartiathome": false,
+                      "dailyroundsbefore10": 8,
+                      "servicetoiskcon": false,
+                      "preachingactivity": false,
+                      "menteemeeting": false,
+                      "festivalorsundayprogram": false,
+                      "morningprogramfrom430": false,
+                      "morningprogramfrom700": false,
+                      "recseqno": 1,
+                      "delayinentering": 0,
+                      "note": ""
+                    },
+                    {
+                      "userid": 10559,
+                      "sadhanadate": "2025-01-31T00:00:00.000Z",
+                      "dailyrounds": 16,
+                      "prabhupadabooks": 0,
+                      "prabhupadalectures": 0,
+                      "gurulectures": 0,
+                      "otherslectures": 0,
+                      "raisingbefore630": true,
+                      "aartiathome": false,
+                      "dailyroundsbefore10": 8,
+                      "servicetoiskcon": false,
+                      "preachingactivity": false,
+                      "menteemeeting": false,
+                      "festivalorsundayprogram": false,
+                      "morningprogramfrom430": false,
+                      "morningprogramfrom700": false,
+                      "recseqno": 1,
+                      "delayinentering": 1,
+                      "note": ""
+                    },
+                    {
+                      "userid": 10559,
+                      "sadhanadate": "2025-02-01T00:00:00.000Z",
+                      "dailyrounds": 16,
+                      "prabhupadabooks": 60,
+                      "prabhupadalectures": 0,
+                      "gurulectures": 0,
+                      "otherslectures": 0,
+                      "raisingbefore630": false,
+                      "aartiathome": false,
+                      "dailyroundsbefore10": 8,
+                      "servicetoiskcon": false,
+                      "preachingactivity": false,
+                      "menteemeeting": false,
+                      "festivalorsundayprogram": false,
+                      "morningprogramfrom430": false,
+                      "morningprogramfrom700": false,
+                      "recseqno": 1,
+                      "delayinentering": 0,
+                      "note": ""
+                    },
+                    {
+                      "userid": 10559,
+                      "sadhanadate": "2025-02-02T00:00:00.000Z",
+                      "dailyrounds": 16,
+                      "prabhupadabooks": 60,
+                      "prabhupadalectures": 0,
+                      "gurulectures": 0,
+                      "otherslectures": 0,
+                      "raisingbefore630": true,
+                      "aartiathome": false,
+                      "dailyroundsbefore10": 8,
+                      "servicetoiskcon": false,
+                      "preachingactivity": false,
+                      "menteemeeting": false,
+                      "festivalorsundayprogram": true,
+                      "morningprogramfrom430": false,
+                      "morningprogramfrom700": false,
+                      "recseqno": 1,
+                      "delayinentering": 0,
+                      "note": ""
+                    }
+                  ].map((entry, idx) => (
+                    <tr key={entry.sadhanadate} className={idx % 2 === 0 ? "bg-background" : "bg-muted/50"}>
+                      <td className="px-3 py-2">
+                        {new Date(entry.sadhanadate).toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: '2-digit' })}
+                      </td>
+                      <td className="px-3 py-2 text-center">{entry.dailyrounds}</td>
+                      <td className="px-3 py-2 text-center">{entry.prabhupadabooks}</td>
+                      <td className="px-3 py-2 text-center">{entry.prabhupadalectures}</td>
+                      <td className="px-3 py-2 text-center">{entry.gurulectures}</td>
+                      <td className="px-3 py-2 text-center">{entry.otherslectures}</td>
+                      <td className="px-3 py-2 text-center">
+                        {entry.raisingbefore630 ? (
+                          <span className="inline-block w-5 h-5 rounded-full bg-green-100 text-green-700 text-xs flex items-center justify-center">✔</span>
+                        ) : (
+                          <span className="inline-block w-5 h-5 rounded-full bg-red-100 text-red-700 text-xs flex items-center justify-center">✗</span>
+                        )}
+                      </td>
+                      <td className="px-3 py-2 text-center">
+                        {entry.aartiathome ? (
+                          <span className="inline-block w-5 h-5 rounded-full bg-green-100 text-green-700 text-xs flex items-center justify-center">✔</span>
+                        ) : (
+                          <span className="inline-block w-5 h-5 rounded-full bg-red-100 text-red-700 text-xs flex items-center justify-center">✗</span>
+                        )}
+                      </td>
+                      <td className="px-3 py-2 text-center">{entry.dailyroundsbefore10}</td>
+                      <td className="px-3 py-2 text-center">
+                        {entry.servicetoiskcon ? (
+                          <span className="inline-block w-5 h-5 rounded-full bg-green-100 text-green-700 text-xs flex items-center justify-center">✔</span>
+                        ) : (
+                          <span className="inline-block w-5 h-5 rounded-full bg-red-100 text-red-700 text-xs flex items-center justify-center">✗</span>
+                        )}
+                      </td>
+                      <td className="px-3 py-2 text-center">
+                        {entry.preachingactivity ? (
+                          <span className="inline-block w-5 h-5 rounded-full bg-green-100 text-green-700 text-xs flex items-center justify-center">✔</span>
+                        ) : (
+                          <span className="inline-block w-5 h-5 rounded-full bg-red-100 text-red-700 text-xs flex items-center justify-center">✗</span>
+                        )}
+                      </td>
+                      <td className="px-3 py-2 text-center">
+                        {entry.menteemeeting ? (
+                          <span className="inline-block w-5 h-5 rounded-full bg-green-100 text-green-700 text-xs flex items-center justify-center">✔</span>
+                        ) : (
+                          <span className="inline-block w-5 h-5 rounded-full bg-red-100 text-red-700 text-xs flex items-center justify-center">✗</span>
+                        )}
+                      </td>
+                      <td className="px-3 py-2 text-center">
+                        {entry.festivalorsundayprogram ? (
+                          <span className="inline-block w-5 h-5 rounded-full bg-green-100 text-green-700 text-xs flex items-center justify-center">✔</span>
+                        ) : (
+                          <span className="inline-block w-5 h-5 rounded-full bg-red-100 text-red-700 text-xs flex items-center justify-center">✗</span>
+                        )}
+                      </td>
+                      <td className="px-3 py-2 text-xs">{entry.note || <span className="text-muted-foreground">-</span>}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </CardContent>
         </Card>
         <Card className="bg-gradient-card">
           <CardHeader>

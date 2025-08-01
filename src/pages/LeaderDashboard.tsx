@@ -149,7 +149,7 @@ export function LeaderDashboard() {
               <div className="flex gap-2">
                 <Button variant="outline" size="sm" className="gap-2">
                   <Mail className="w-4 h-4" />
-                  Email All
+                  Whatsapp All
                 </Button>
                 <Button className="bg-gradient-secondary hover:shadow-glow transition-all duration-300 gap-2">
                   <UserPlus className="w-4 h-4" />
